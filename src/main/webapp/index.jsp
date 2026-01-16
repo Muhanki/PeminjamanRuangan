@@ -51,7 +51,7 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Halaman Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Peminjaman Ruangan</a>
@@ -77,7 +77,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Halaman Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <h1>Selamat Datang di Peminjaman Ruangan</h1>
