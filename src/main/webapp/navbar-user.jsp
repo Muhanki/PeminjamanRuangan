@@ -17,8 +17,15 @@
                     <a class="nav-link active" href="<%= request.getContextPath() %>/ajukanPeminjaman.jsp">Ajukan Peminjaman</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<%= request.getContextPath() %>/statusPeminjaman.jsp">Status Peminjaman</a>
+                    <a class="nav-link" href="<%= request.getContextPath() %>/statusPeminjaman">Status Peminjaman</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= request.getContextPath() %>/about">About Us</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="<%= request.getContextPath() %>/gallery">Gallery</a>
+                </li>
+                
             </ul>
             <div class="d-flex align-items-center">
                 <span class="navbar-text me-3 text-white">

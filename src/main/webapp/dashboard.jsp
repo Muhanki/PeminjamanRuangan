@@ -63,29 +63,40 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="dashboard.jsp">Dashboard</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="lihatRuangan.jsp">Lihat Ruangan</a>
-                        </li>
 
-                        <!-- --- AWAL BAGIAN YANG DIPERBAIKI --- -->
+                        
                         <% if ("admin".equals(userRole)) { %>
-                            <!-- MENU UNTUK ADMIN -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Admin
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="admin/kelolaPeminjaman">Kelola Peminjaman</a></li>
-                                    <li><a class="dropdown-item" href="admin/kelolaUser">Kelola User</a></li>
-                                </ul>
-                            </li>
+                  
+                                <li class="nav-item">
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/admin/kelolaPeminjaman">Kelola Peminjaman</a>
+                                    </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/admin/kelolaUser">Kelola User</a>
+                                    </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/admin/formRuangan">Kelola Ruangan</a>
+                                    </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.jsp">About Us</a>
+                                    </li>
+                                    
+                    
                         <% } else { %>
                             <!-- MENU UNTUK USER BIASA -->
+                            <li class="nav-item">
+                            <a class="nav-link" href="lihatRuangan.jsp">Lihat Ruangan</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="ajukanPeminjaman.jsp">Ajukan Peminjaman</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="statusPeminjaman.jsp">Status Peminjaman</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.jsp">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                 <a class="nav-link" href="${pageContext.request.contextPath}/gallery">Gallery</a>
                             </li>
                         <% } %>
                         <!-- --- AKHIR BAGIAN YANG DIPERBAIKI --- -->
@@ -156,7 +167,7 @@
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Kelola User</h5>
                                     <p class="card-text">Lihat dan hapus user yang terdaftar.</p>
-                                    <a href="admin/kelolaUser" class="btn btn-warning">Kelola</a>
+                                    <a href="admin/kelolaUser" class="btn btn-primary">Kelola</a>
                                 </div>
                             </div>
                         </div>
@@ -164,35 +175,36 @@
                         <!-- KARTU KHUSUS USER BIASA -->
                         <div class="col-md-4">
                             <div class="card bg-light">
-                                <div class="card-body text-center">
+                            <div class="card-body text-center">
                                     <h5 class="card-title">Ajukan Peminjaman</h5>
                                     <p class="card-text">Buat permintaan peminjaman ruangan baru.</p>
-                                    <a href="ajukanPeminjaman.jsp" class="btn btn-success">Ajukan</a>
+                                    <a href="ajukanPeminjaman.jsp" class="btn btn-primary">Ajukan</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card bg-light">
-                                <div class="card-body text-center">
+                            <div class="card-body text-center">
                                     <h5 class="card-title">Status Peminjaman</h5>
                                     <p class="card-text">Pantau status permintaan Anda.</p>
-                                    <a href="statusPeminjaman.jsp" class="btn btn-info">Cek Status</a>
+                                    <a href="statusPeminjaman.jsp" class="btn btn-primary">Cek Status</a>
                                 </div>
                             </div>
                         </div>
+                        
                     <% } %>
                     
                     <!-- KARTU UMUM UNTUK SEMUA -->
                     <div class="col-md-4">
                         <div class="card bg-light">
-                            <div class="card-body text-center">
+                        <div class="card-body text-center">
                                 <h5 class="card-title">Lihat Ruangan</h5>
                                 <p class="card-text">Jelajahi daftar ruangan yang tersedia.</p>
-                                <a href="lihatRuangan.jsp" class="btn btn-secondary">Lihat</a>
+                                <a href="lihatRuangan.jsp" class="btn btn-primary">Lihat</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                 </div>
                 
                 <!-- Ringkasan -->
                 <div class="mt-5">
@@ -210,7 +222,7 @@
         <!-- Footer -->
         <footer>
             <div class="container">
-                <p>&copy; 2023 Peminjaman Ruangan. All rights reserved.</p>
+                <p>&copy; 2025 Peminjaman Ruangan. All rights reserved.</p>
             </div>
         </footer>
 

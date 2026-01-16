@@ -11,11 +11,35 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            margin-top: auto; /* Memastikan footer tetap di bawah */
+        }   
+        .title-underline {
+            width: 50px;
+            height: 5px;
+            background: #0d6efd;
+            margin: 10px auto 30px;
+            border-radius: 5px;
+        }
+    </style>
         <title>Ajukan Peminjaman</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <%-- Panggil navbar yang sesuai --%>
+        <%-- Pa nggil navbar yang sesuai --%>
         <% if ("admin".equals(userRole)) { %>
         <jsp:include page="navbar-admin.jsp" />
         <% } else { %>
@@ -79,6 +103,12 @@
                 <button type="submit" class="btn btn-primary">Ajukan Peminjaman</button>
             </form>
         </div>
+                    
+                     <footer>
+            <div class="container">
+                <p>&copy; 2025 Peminjaman Ruangan - Ajukan Peminjaman</p>
+            </div>
+        </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>

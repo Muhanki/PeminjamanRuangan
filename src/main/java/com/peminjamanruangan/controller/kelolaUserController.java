@@ -24,12 +24,12 @@ public class kelolaUserController extends HttpServlet {
         // --- CEK ROLE ADMIN ---
         HttpSession session = request.getSession();
         if (!"admin".equals(session.getAttribute("userRole"))) {
-            response.sendRedirect("../login.jsp?error=Anda tidak memiliki akses!");
+           response.sendRedirect(request.getContextPath() + "/login.jsp?error=Akses Ditolak");
             return;
         }
 
         List<User> allUsers = userDAO.getAllUsers();
         request.setAttribute("listUser", allUsers);
-        request.getRequestDispatcher("../kelolauser.jsp").forward(request, response);
+        request.getRequestDispatcher("/kelolauser.jsp").forward(request, response);
     }
 }

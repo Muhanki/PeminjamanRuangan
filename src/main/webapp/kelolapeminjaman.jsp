@@ -13,28 +13,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        body{font-family: 'Arial', sans-serif; 
+               min-height: 100vh; 
+               display: flex; 
+               flex-direction: column; 
+        }    
+        .content { flex: 1; 
+                  padding:40px 0;
+        }
+         footer {
+                background-color: #343a40;
+                color: white;
+                text-align: center;
+                padding: 20px 0;
+                width: 100%;
+                margin-top: auto;
+            }
+    </style>
     <title>Kelola Peminjaman</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-   
-    
-    <!-- Navbar (Anda bisa copy-paste dari dashboard.jsp) -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="../dashboard.jsp">Peminjaman Ruangan</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="../dashboard.jsp">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../lihatRuangan.jsp">Lihat Ruangan</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
-                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="admin/kelolaPeminjaman">Kelola Peminjaman</a></li>
-                                    <li><a class="dropdown-item" href="admin/kelolaUser">Kelola User</a></li>
-                                </ul>
-                    </li>
-                </ul>
+    <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/admin/dashboard.jsp">Dashboard</a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/admin/kelolaPeminjaman">Kelola Peminjaman</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/admin/kelolaUser">Kelola User</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/addRuangan">Kelola Ruangan</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/admin/about">About Us</a>
+    </li>
+</ul>
                 <div class="d-flex align-items-center">
                     <span class="navbar-text me-3">Halo, <%= session.getAttribute("loggedInUser")%>!</span>
                     <a class="btn btn-outline-light btn-sm" href="../logout.jsp">Logout</a>
@@ -67,7 +90,7 @@
 %>
     <script>alert("<%= msg %>");</script>
 <% 
-        session.removeAttribute("message"); // Hapus pesan agar tidak muncul terus saat refresh
+        session.removeAttribute("message"); 
     } 
 %>
                     
@@ -126,6 +149,11 @@
             </table>
         </div>
     </div>
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Peminjaman Ruangan - Kelola Peminjaman</p>
+            </div>
+        </footer>
 
 </body>
 </html>

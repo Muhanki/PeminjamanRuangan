@@ -11,6 +11,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        body { font-family: 'Arial', sans-serif; 
+               min-height: 100vh; 
+               display: flex; 
+               flex-direction: column; 
+        
+        }
+        .content { flex: 1; 
+                   padding:40px 0;
+        }
+        footer { background-color: #343a40;
+                 color: white; text-align: 
+                 center; padding: 20px 0;
+                 width: 100%; 
+                 margin-top: auto; 
+        }
+        .title-underline {
+            width: 50px;
+            height: 5px;
+            background: #0d6efd;
+            margin: 10px auto 30px;
+            border-radius: 5px;
+        }
+    </style>
     <title>Status Peminjaman Saya</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -77,7 +101,11 @@
             </table>
         </div>
     </div>
-
+ <footer>
+            <div class="container">
+                <p>&copy; 2025 Peminjaman Ruangan - Status Peminjaman</p>
+            </div>
+        </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

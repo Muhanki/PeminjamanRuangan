@@ -6,7 +6,7 @@ public class User {
     private String password;
     private String email;
     private String namaLengkap;
-    private String role; // Tambahkan field role jika perlu
+    private String role;
 
     // Constructor
     public User() {

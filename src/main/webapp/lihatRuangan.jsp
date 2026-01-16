@@ -24,18 +24,43 @@
     <title>Lihat Ruangan - Peminjaman Ruangan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { font-family: 'Arial', sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
-        .content { flex: 1; padding: 40px 0; }
-        footer { background-color: #343a40; color: white; text-align: center; padding: 20px 0; width: 100%; margin-top: auto; }
-        .denah-section { margin-top: 50px; text-align: center; }
-        .denah-section img { max-width: 100%; height: auto; border: 2px solid #ddd; border-radius: 10px; cursor: pointer; transition: transform 0.3s ease; }
-        .denah-section img:hover { transform: scale(1.02); }
-        .room-card { margin-bottom: 30px; }
-        .room-card .card { height: 100%; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
-        .room-card .card:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        body { font-family: 'Arial', sans-serif; 
+               min-height: 100vh; 
+               display: flex; 
+               flex-direction: column; 
+        
+        }
+        .content { flex: 1; 
+                   padding:40px 0;
+        }
+        footer { background-color: #343a40;
+                 color: white; text-align: 
+                 center; padding: 20px 0;
+                 width: 100%; 
+                 margin-top: auto; 
+        }
+        .denah-section { margin-top: 50px;
+                         text-align: center; 
+        }
+        .denah-section img { max-width: 100%; 
+                             height: auto; 
+                             border: 2px solid #ddd; 
+                             border-radius: 10px; cursor: 
+                             pointer; transition: transform 0.3s ease; 
+        }
+        .denah-section img:hover { transform: scale(1.02); 
+        }
+        .room-card { margin-bottom: 30px; 
+        }
+        .room-card .card { height: 100%;
+                           transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
+        }
+        .room-card .card:hover { transform: translateY(-5px);
+                                 box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        }
     </style>
 </head>
-<body>
+<body>  
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container d-flex justify-content-between">
@@ -47,6 +72,8 @@
                     <% if (!"admin".equals(session.getAttribute("userRole"))) { %>
                         <li class="nav-item"><a class="nav-link" href="ajukanPeminjaman.jsp">Ajukan Peminjaman</a></li>
                         <li class="nav-item"><a class="nav-link" href="statusPeminjaman.jsp">Status Peminjaman</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.jsp">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.jsp">Gallery</a></li>
                     <% } %>
                 </ul>
                 <div class="d-flex align-items-center">
@@ -318,7 +345,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 Peminjaman Ruangan. All rights reserved.</p>
+            <p>&copy; 2023 Peminjaman Ruangan - Lihat Ruangan</p>
         </div>
     </footer>
 

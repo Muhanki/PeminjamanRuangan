@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Peminjaman {
     private int idPeminjaman;
     private User user;
-    private String namaRuangan; // Kita simpan nama ruangannya langsung
+    private String namaRuangan; 
     private java.sql.Date tanggal;
     private java.sql.Time jamMulai;
     private java.sql.Time jamSelesai;
