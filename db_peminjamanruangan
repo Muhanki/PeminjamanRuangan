@@ -1,0 +1,84 @@
+postgres=# \c db_peminjamanruangan
+You are now connected to database "db_peminjamanruangan" as user "postgres".
+db_peminjamanruangan=# \dt
+             List of tables
+ Schema |    Name    | Type  |  Owner
+--------+------------+-------+----------
+ public | peminjaman | table | postgres
+ public | rooms      | table | postgres
+ public | ruangan    | table | postgres
+ public | users      | table | postgres
+(4 rows)
+
+
+db_peminjamanruangan=# select * from ruangan;
+ id_ruangan | nama_ruangan | kapasitas |              keterangan
+------------+--------------+-----------+--------------------------------------
+        101 | Ruangan 101  |        20 | Ruang untuk rapat kecil
+        102 | Ruangan 102  |        20 | Ruang untuk rapat kecil
+        103 | Ruangan 103  |        20 | Ruang untuk rapat kecil
+        104 | Ruangan 104  |        20 | Ruang untuk rapat kecil
+        105 | Ruangan 105  |        50 | Ruang untuk rapat sedang
+        106 | Ruangan 106  |        50 | Ruang untuk rapat sedang
+        107 | Ruangan 107  |        50 | Ruang untuk rapat sedang
+        108 | Ruangan 108  |       100 | Ruang untuk rapat besar atau seminar
+(8 rows)
+
+   db_peminjamanruangan=# \d users;
+                                       Table "public.users"
+  Column  |          Type          | Collation | Nullable |                Default
+----------+------------------------+-----------+----------+----------------------------------------
+ id_user  | integer                |           | not null | nextval('users_id_user_seq'::regclass)
+ username | character varying(50)  |           | not null |
+ password | character varying(255) |           | not null |
+ role     | character varying(20)  |           | not null |
+Indexes:
+    "users_pkey" PRIMARY KEY, btree (id_user)
+    "users_username_key" UNIQUE CONSTRAINT, btree (username)
+Referenced by:
+    TABLE "peminjaman" CONSTRAINT "peminjaman_id_user_fkey" FOREIGN KEY (id_user) REFERENCES users(id_user)
+
+
+db_peminjamanruangan=# \d peminjaman;
+                                             Table "public.peminjaman"
+    Column     |          Type          | Collation | Nullable |                      Default
+---------------+------------------------+-----------+----------+---------------------------------------------------
+ id_peminjaman | integer                |           | not null | nextval('peminjaman_id_peminjaman_seq'::regclass)
+ id_user       | integer                |           | not null |
+ id_ruangan    | integer                |           | not null |
+ tanggal       | date                   |           | not null |
+ jam_mulai     | time without time zone |           | not null |
+ jam_selesai   | time without time zone |           | not null |
+ keperluan     | character varying(255) |           | not null |
+ status        | character varying(20)  |           | not null | 'pending'::character varying
+Indexes:
+    "peminjaman_pkey" PRIMARY KEY, btree (id_peminjaman)
+Foreign-key constraints:
+    "peminjaman_id_ruangan_fkey" FOREIGN KEY (id_ruangan) REFERENCES ruangan(id_ruangan)
+    "peminjaman_id_user_fkey" FOREIGN KEY (id_user) REFERENCES users(id_user)
+
+
+db_peminjamanruangan=# \d ruangan;
+                                           Table "public.ruangan"
+    Column    |          Type          | Collation | Nullable |                   Default
+--------------+------------------------+-----------+----------+---------------------------------------------
+ id_ruangan   | integer                |           | not null | nextval('ruangan_id_ruangan_seq'::regclass)
+ nama_ruangan | character varying(100) |           | not null |
+ kapasitas    | integer                |           | not null |
+ keterangan   | text                   |           |          |
+Indexes:
+    "ruangan_pkey" PRIMARY KEY, btree (id_ruangan)
+Referenced by:
+    TABLE "peminjaman" CONSTRAINT "peminjaman_id_ruangan_fkey" FOREIGN KEY (id_ruangan) REFERENCES ruangan(id_ruangan)
+
+
+db_peminjamanruangan=# \d rooms;
+                                      Table "public.rooms"
+   Column   |          Type          | Collation | Nullable |              Default
+------------+------------------------+-----------+----------+-----------------------------------
+ id         | integer                |           | not null | nextval('rooms_id_seq'::regclass)
+ name       | character varying(100) |           | not null |
+ capacity   | integer                |           | not null |
+ facilities | text                   |           |          |
+Indexes:
+    "rooms_pkey" PRIMARY KEY, btree (id)
